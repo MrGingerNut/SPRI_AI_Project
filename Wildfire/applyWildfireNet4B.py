@@ -86,7 +86,7 @@ def save_rgb_geotiff(output_path, result_mask, geotransform, projection):
         output_path,
         cols,
         rows,
-        3,  # 3 bandas (R, G, B)
+        3,  
         gdal.GDT_Byte
     )
     
@@ -94,34 +94,27 @@ def save_rgb_geotiff(output_path, result_mask, geotransform, projection):
         print(f"Error: No se puede crear {output_path}")
         return False
     
-    # Establecer georreferenciación
+
     ds.SetGeoTransform(geotransform)
     ds.SetProjection(projection)
-    
-    # Crear arrays para cada banda
+
     red_band = np.zeros((rows, cols), dtype=np.uint8)
     green_band = np.zeros((rows, cols), dtype=np.uint8)
     blue_band = np.zeros((rows, cols), dtype=np.uint8)
-    
-    # Píxeles de wildfire en rojo (255, 0, 0)
+
     red_band[result_mask == 1] = 255
-    # green y blue quedan en 0 (negro para background, rojo para wildfire)
-    
-    # Escribir las 3 bandas
+
     ds.GetRasterBand(1).WriteArray(red_band)    # Banda R
     ds.GetRasterBand(2).WriteArray(green_band)  # Banda G
     ds.GetRasterBand(3).WriteArray(blue_band)   # Banda B
-    
-    # Establecer interpretación de color
+
     ds.GetRasterBand(1).SetColorInterpretation(gdal.GCI_RedBand)
     ds.GetRasterBand(2).SetColorInterpretation(gdal.GCI_GreenBand)
     ds.GetRasterBand(3).SetColorInterpretation(gdal.GCI_BlueBand)
-    
-    # Configuración de compresión
+
     ds.SetMetadataItem('COMPRESS', 'DEFLATE')
     ds.SetMetadataItem('PREDICTOR', '2')
-    
-    # Cerrar dataset
+
     ds.FlushCache()
     ds = None
     
@@ -173,8 +166,7 @@ if __name__ == '__main__':
                        help='save metadata file')
     
     args = parser.parse_args()
-    
-    # Valores mean/std para WildFire (4 canales)
+
     MEAN = [0.14173148614371614, 0.11371037590822611, 0.10949049380735058, 0.18810607856173908]
     STD = [0.05904376231854768, 0.04853597807747783, 0.04196910754407196, 0.09118229795180302]
     
@@ -191,7 +183,6 @@ if __name__ == '__main__':
     print(f"Cuda: {args.cuda}")
     print(f"Output format: RGB GeoTIFF (Black + Red)")
     
-    # Configurar dispositivo
     device = torch.device("cpu")
     if args.cuda and torch.cuda.is_available():
         device = torch.device("cuda:0")
@@ -199,7 +190,6 @@ if __name__ == '__main__':
     else:
         print("Using CPU")
     
-    # Crear y cargar modelo
     print("\n" + "=" * 70)
     print("LOADING MODEL")
     print("=" * 70)
@@ -219,7 +209,6 @@ if __name__ == '__main__':
         print(f"✗ Error: Model file not found: {args.weights}")
         sys.exit(1)
     
-    # Cargar imagen con georreferenciación
     print("\n" + "=" * 70)
     print("LOADING IMAGE")
     print("=" * 70)
@@ -229,7 +218,6 @@ if __name__ == '__main__':
         normalize=normalize, mean=MEAN, std=STD
     )
     
-    # Configuración de ventana deslizante
     k_size = args.size
     
     if k_size <= 32:
@@ -256,7 +244,6 @@ if __name__ == '__main__':
     print(f"  Border ignored: {bord} pixels")
     print(f"  Image size: {height}x{width}")
     
-    # Calcular posiciones de ventanas
     y_positions = []
     y = 0
     while y + k_size <= height:
@@ -283,13 +270,11 @@ if __name__ == '__main__':
     print(f"  Y coverage: {y_positions[-1] + k_size}/{height}")
     print(f"  X coverage: {x_positions[-1] + k_size}/{width}")
     
-    # Mapas de acumulación
     vote_map = np.zeros((height, width), dtype=np.int32)
     coverage_map = np.zeros((height, width), dtype=np.int32)
     
     imgs_tensor = torch.from_numpy(imgnp).to(device)
     
-    # Predicción
     print("\n" + "=" * 70)
     print("PREDICTING")
     print("=" * 70)
@@ -345,7 +330,6 @@ if __name__ == '__main__':
                     result_mask[y, x] = 1
                     fire_pixel_count += 1
     
-    # Estadísticas
     total_pixels = height * width
     fire_percentage = 100 * fire_pixel_count / total_pixels
     
@@ -355,12 +339,10 @@ if __name__ == '__main__':
     print(f"Processing time: {total_time:.2f} seconds")
     print(f"Fire pixels: {fire_pixel_count:,} ({fire_percentage:.4f}%)")
     
-    # Guardar resultado como RGB GeoTIFF
     print("\n" + "=" * 70)
     print("SAVING RGB GeoTIFF")
     print("=" * 70)
     
-    # Asegurar extensión .tif
     if not args.output.endswith('.tif') and not args.output.endswith('.tiff'):
         output_path = args.output + '.tif'
     else:
@@ -368,7 +350,6 @@ if __name__ == '__main__':
     
     save_rgb_geotiff(output_path, result_mask, geotransform, projection)
     
-    # Guardar metadatos si se solicita
     if args.save_metadata:
         base_name = os.path.splitext(output_path)[0]
         metadata_path = base_name + '_metadata.txt'
@@ -385,7 +366,7 @@ if __name__ == '__main__':
     print(f"  - Red (255,0,0): Wildfire detected")
     
     if fire_pixel_count == 0:
-        print("\n⚠️  NOTE: No fire pixels detected.")
+        print("\n   NOTE: No fire pixels detected.")
         print("   Consider checking the input image or model parameters.")
     
     sys.exit(0)
