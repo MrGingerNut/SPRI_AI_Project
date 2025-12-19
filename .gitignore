@@ -1,0 +1,22 @@
+# Ignorar el entorno virtual (son miles de archivos que no sirven en la nube)
+venv/
+env/
+.env
+
+# Ignorar archivos compilados de Python
+__pycache__/
+*.pyc
+
+# Ignorar Datasets gigantes y modelos (haz backup de esto en Drive/Disco Duro, no en Git)
+*.csv
+*.xlsx
+*.zip
+*.h5
+*.pt
+*.pth
+models/
+data/
+
+# Ignorar configuraciones del editor
+.vscode/
+.idea/
