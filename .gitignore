@@ -16,6 +16,7 @@ __pycache__/
 *.pth
 models/
 data/
+Raw/
 
 # Ignorar configuraciones del editor
 .vscode/
