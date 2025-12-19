@@ -21,15 +21,12 @@ target_min = 0
 target_max = (2 ** 16) - 1
 new_data_type = "UInt16"  
 
-# formato final para las imagenes true
 final_format = "GTiff"
 
-# CONFIGURACIÓN DE PARÁMETROS
 UMBRAL_PORCENTAJE_ROJO = 0.20  
 TAMANO_BLOQUE = 128  
 OVERLAP = 64  
 
-# crear directorios
 os.makedirs(output_directory, exist_ok=True)
 os.makedirs(temp_directory, exist_ok=True)
 os.makedirs(output_dir_img, exist_ok=True)
@@ -82,7 +79,6 @@ def crear_mascara_roja_pura(imagen_burned_area):
                 banda_g = src.read(2)
                 banda_b = src.read(3)
                 
-                # NORMALIZAR A UINT8 PARA DETECCIÓN
                 def normalizar_banda(banda):
                     if banda.dtype != np.uint8:
                         if banda.dtype == np.uint16:
@@ -96,7 +92,6 @@ def crear_mascara_roja_pura(imagen_burned_area):
                 banda_g_norm = normalizar_banda(banda_g)
                 banda_b_norm = normalizar_banda(banda_b)
                 
-                # DETECCIÓN ESTRICTA
                 umbral_rojo = 254
                 
                 mascara_roja = (
@@ -110,7 +105,6 @@ def crear_mascara_roja_pura(imagen_burned_area):
                 mascara_azul_bajo = (banda_b_norm < 100)
                 mascara_final = mascara_roja & mascara_verde_bajo & mascara_azul_bajo
                 
-                # Contar píxeles
                 rojo_pixels = np.sum(mascara_final)
                 total_pixels = mascara_final.size
                 porcentaje_rojo = (rojo_pixels / total_pixels) * 100
@@ -121,7 +115,6 @@ def crear_mascara_roja_pura(imagen_burned_area):
                     print("    ⚠  No se detectaron píxeles rojos puros")
                     return None
                 
-                # CREAR MÁSCARA EN UINT16
                 mascara_r = np.where(mascara_final, np.uint16(65535), np.uint16(0))
                 mascara_g = np.where(mascara_final, np.uint16(0), np.uint16(0))
                 mascara_b = np.where(mascara_final, np.uint16(0), np.uint16(0))
@@ -155,7 +148,6 @@ def dividir_y_filtrar_imagen(ruta_imagen_true, ruta_imagen_mask, tamaño_bloque=
         print(f"      TRUE (4 bandas): {os.path.basename(ruta_imagen_true)}")
         print(f"      MASK (3 bandas): {os.path.basename(ruta_imagen_mask)}")
         
-        # 1. Crear máscara de píxeles rojos puros
         print(f"    Creando máscara de píxeles rojos puros...")
         mascara_data = crear_mascara_roja_pura(ruta_imagen_mask)
         
@@ -163,14 +155,12 @@ def dividir_y_filtrar_imagen(ruta_imagen_true, ruta_imagen_mask, tamaño_bloque=
             print("    ❌ No se pudo crear máscara válida")
             return 0
         
-        # 2. Leer imagen verdadera de 4 bandas
         print(f"    Leyendo imagen verdadera de 4 bandas...")
         with rasterio.open(ruta_imagen_true) as src_true:
             if src_true.count < 4:
                 print(f"    ❌ Imagen verdadera tiene {src_true.count} bandas, se esperaban 4")
                 return 0
             
-            # Leer las 4 bandas (R,G,B,NIR)
             bandas_true = []
             for i in range(1, 5):
                 bandas_true.append(src_true.read(i))
@@ -181,21 +171,17 @@ def dividir_y_filtrar_imagen(ruta_imagen_true, ruta_imagen_mask, tamaño_bloque=
             print(f"    Tipo de datos TRUE: {bandas_true[0].dtype}")
             print(f"    Tipo de datos MASK: {mascara_data['r'].dtype}")
             
-            # Verificar dimensiones
             if (alto != mascara_data['r'].shape[0]) or (ancho != mascara_data['r'].shape[1]):
                 print(f"    ⚠  ADVERTENCIA: Dimensiones no coinciden")
                 print(f"      TRUE: {alto}x{ancho}, MASK: {mascara_data['r'].shape[0]}x{mascara_data['r'].shape[1]}")
             
-            # 3. Procesar bloques CON OVERLAP
             contador = 0
             descartadas = 0
             descartadas_por_umbral = 0
             
-            # Área común
             alto_comun = min(alto, mascara_data['r'].shape[0])
             ancho_comun = min(ancho, mascara_data['r'].shape[1])
             
-            # Calcular paso con overlap
             paso = tamaño_bloque - overlap
             
             total_pixels_por_bloque = tamaño_bloque * tamaño_bloque
@@ -208,7 +194,6 @@ def dividir_y_filtrar_imagen(ruta_imagen_true, ruta_imagen_mask, tamaño_bloque=
             print(f"      Mínimo píxeles rojos requeridos: {minimo_pixels_rojos} ({UMBRAL_PORCENTAJE_ROJO*100}%)")
             print(f"      Área común: {ancho_comun}x{alto_comun}")
             
-            # Calcular límites para no salir de la imagen
             max_y = alto_comun - tamaño_bloque
             max_x = ancho_comun - tamaño_bloque
             
@@ -218,11 +203,9 @@ def dividir_y_filtrar_imagen(ruta_imagen_true, ruta_imagen_mask, tamaño_bloque=
             
             print(f"    Explorando bloques con overlap...")
             
-            # Usar paso en lugar de tamaño_bloque para tener overlap
             y_coords = list(range(0, max_y + 1, paso))
             x_coords = list(range(0, max_x + 1, paso))
             
-            # Si el último bloque no llega al borde, agregarlo
             if y_coords[-1] != max_y:
                 y_coords.append(max_y)
             if x_coords[-1] != max_x:
@@ -234,29 +217,22 @@ def dividir_y_filtrar_imagen(ruta_imagen_true, ruta_imagen_mask, tamaño_bloque=
             
             for y_idx, y in enumerate(y_coords):
                 for x_idx, x in enumerate(x_coords):
-                    # Extraer bloque de la MÁSCARA
                     bloque_mascara_r = mascara_data['r'][y:y+tamaño_bloque, x:x+tamaño_bloque]
                     
-                    # Contar píxeles rojos
                     pixeles_rojos = np.sum(bloque_mascara_r > 0)
                     porcentaje_rojo_bloque = pixeles_rojos / total_pixels_por_bloque
                     
-                    # CONDICIÓN: Solo guardar si tiene al menos el porcentaje requerido
                     if pixeles_rojos > 0 and porcentaje_rojo_bloque >= UMBRAL_PORCENTAJE_ROJO:
-                        # Extraer bloque de la imagen TRUE
                         bloque_true = []
                         for banda in bandas_true:
                             bloque = banda[y:y+tamaño_bloque, x:x+tamaño_bloque]
                             bloque_true.append(bloque)
                         
-                        # Extraer bloques de máscara completa
                         bloque_mascara_g = mascara_data['g'][y:y+tamaño_bloque, x:x+tamaño_bloque]
                         bloque_mascara_b = mascara_data['b'][y:y+tamaño_bloque, x:x+tamaño_bloque]
                         
-                        # Crear nombres de archivo
                         nombre_base = os.path.splitext(zip_name)[0] if zip_name else "bloque"
                         
-                        # GUARDAR IMAGEN TRUE (4 bandas, UInt16)
                         nombre_true = f"{nombre_base}_bloque_{contador}_x{x}_y{y}.tiff"
                         ruta_true = os.path.join(output_dir_img, nombre_true)
                         
@@ -280,7 +256,6 @@ def dividir_y_filtrar_imagen(ruta_imagen_true, ruta_imagen_mask, tamaño_bloque=
                             for i, bloque_banda in enumerate(bloque_true):
                                 dst.write(bloque_banda, i+1)
                         
-                        # GUARDAR MÁSCARA (3 bandas, UInt16)
                         nombre_mask = f"{nombre_base}_bloque_{contador}_x{x}_y{y}.tiff"
                         ruta_mask = os.path.join(output_dir_mask, nombre_mask)
                         
@@ -306,7 +281,7 @@ def dividir_y_filtrar_imagen(ruta_imagen_true, ruta_imagen_mask, tamaño_bloque=
                             dst.write(bloque_mascara_g, 2)
                             dst.write(bloque_mascara_b, 3)
                         
-                        if contador < 10:  # Mostrar primeros 10 bloques
+                        if contador < 10:  
                             print(f"      ✓ Bloque {contador} en ({x},{y}): {pixeles_rojos} rojos ({porcentaje_rojo_bloque*100:.1f}%)")
                         elif contador == 10:
                             print(f"      ... mostrando solo primeros 10 bloques ...")
@@ -316,7 +291,7 @@ def dividir_y_filtrar_imagen(ruta_imagen_true, ruta_imagen_mask, tamaño_bloque=
                         descartadas += 1
                         if pixeles_rojos > 0 and porcentaje_rojo_bloque > 0:
                             descartadas_por_umbral += 1
-                            if contador < 5:  # Mostrar primeros 5 descartados
+                            if contador < 5:  
                                 print(f"      ✗ Bloque en ({x},{y}) descartado: {pixeles_rojos} rojos ({porcentaje_rojo_bloque*100:.1f}%) < {UMBRAL_PORCENTAJE_ROJO*100}%")
             
             print(f"\n    Resumen detallado:")
@@ -356,7 +331,6 @@ def procesar_zip(zip_path, estadisticas_globales):
     imagen_combinada = os.path.join(output_directory, f"{base_name}_merged.tif")
     
     try:
-        # Estadísticas para este ZIP
         stats_zip = {
             'nombre': zip_name,
             'archivos_encontrados': 0,
@@ -367,16 +341,13 @@ def procesar_zip(zip_path, estadisticas_globales):
             'valido': False
         }
         
-        # 1. Extraer archivos del ZIP
         print(f"\n1. Extrayendo archivos...")
         os.makedirs(extract_dir, exist_ok=True)
         with zipfile.ZipFile(zip_path, 'r') as zip_ref:
             zip_ref.extractall(extract_dir)
         
-        # 2. Buscar archivos necesarios
         print(f"\n2. Buscando archivos necesarios...")
         
-        # Buscar imagen Burned_Area_Detection
         archivo_burned = None
         archivos_tiff = [f for f in os.listdir(extract_dir) if f.endswith(('.tif', '.tiff'))]
         stats_zip['archivos_encontrados'] = len(archivos_tiff)
@@ -393,7 +364,6 @@ def procesar_zip(zip_path, estadisticas_globales):
             estadisticas_globales['zips_invalidos'].append(stats_zip)
             return 0
         
-        # Buscar bandas individuales
         bandas = {}
         patrones = {
             'B02': 'B02',
@@ -409,7 +379,6 @@ def procesar_zip(zip_path, estadisticas_globales):
                     print(f"   ✓ Encontrada banda {key}: {archivo}")
                     break
         
-        # Verificar que tengamos todas las bandas
         stats_zip['bandas_encontradas'] = len(bandas)
         if len(bandas) != 4:
             print(f"   ❌ Faltan bandas. Encontradas: {list(bandas.keys())}")
@@ -417,27 +386,22 @@ def procesar_zip(zip_path, estadisticas_globales):
             estadisticas_globales['zips_invalidos'].append(stats_zip)
             return 0
         
-        # 3. Fusionar bandas en imagen de 4 bandas
         print(f"\n3. Fusionando bandas en imagen de 4 bandas...")
         
-        # Crear archivos temporales escalados
         scaled_files = []
         orden_bandas = ['B04', 'B03', 'B02', 'B08']  # R, G, B, NIR
         
         for banda_key in orden_bandas:
             ruta_banda = bandas[banda_key]
             
-            # Obtener min/max
             src_min, src_max = get_band_min_max(ruta_banda)
             if src_min is None:
                 src_min, src_max = 0, 10000
             
-            # Escalar banda
             temp_output = os.path.join(temp_directory, f"{base_name}_{banda_key}_scaled.tif")
             translate_band(ruta_banda, temp_output, src_min, src_max)
             scaled_files.append(temp_output)
         
-        # Fusionar con gdal_merge
         merge_cmd = [
             "gdal_merge.py",
             "-separate",
@@ -453,7 +417,6 @@ def procesar_zip(zip_path, estadisticas_globales):
             print(f"   ✓ Imagen combinada creada: {os.path.basename(imagen_combinada)}")
             stats_zip['imagen_combinada_creada'] = True
             
-            # Mostrar información de la imagen
             try:
                 with rasterio.open(imagen_combinada) as src:
                     print(f"   ✓ Dimensiones: {src.width}x{src.height}")
@@ -468,12 +431,10 @@ def procesar_zip(zip_path, estadisticas_globales):
             estadisticas_globales['zips_invalidos'].append(stats_zip)
             return 0
         
-        # Limpiar archivos temporales escalados
         for f in scaled_files:
             if os.path.exists(f):
                 os.remove(f)
         
-        # 4. Procesar imagen combinada con máscara
         print(f"\n4. Generando crops de {TAMANO_BLOQUE}x{TAMANO_BLOQUE}...")
         bloques_generados = dividir_y_filtrar_imagen(
             ruta_imagen_true=imagen_combinada,
@@ -485,7 +446,6 @@ def procesar_zip(zip_path, estadisticas_globales):
         
         stats_zip['bloques_generados'] = bloques_generados
         
-        # 5. Limpiar archivos temporales
         print(f"\n5. Limpiando archivos temporales...")
         if os.path.exists(extract_dir):
             shutil.rmtree(extract_dir)
@@ -549,7 +509,6 @@ def mostrar_estadisticas_detalladas(estadisticas_globales, total_bloques):
         print("-" * 80)
         print(f"TOTAL: {zips_validos} ZIPs válidos con {total_bloques_validos} bloques")
         
-        # Estadísticas adicionales
         if zips_validos > 0:
             promedio_bloques = total_bloques_validos / zips_validos
             print(f"\nESTADÍSTICAS DE ZIPS VÁLIDOS:")
@@ -590,7 +549,6 @@ def main():
         print("No se encontraron archivos .zip")
         return
     
-    # Inicializar estadísticas globales
     estadisticas_globales = {
         'total_zips': len(zip_files),
         'zips_validos': [],  # ZIPs que generaron bloques
@@ -622,7 +580,6 @@ def main():
         bloques = procesar_zip(zip_path, estadisticas_globales)
         total_bloques += bloques
     
-    # Mostrar estadísticas detalladas
     mostrar_estadisticas_detalladas(estadisticas_globales, total_bloques)
     
     # Resumen final
