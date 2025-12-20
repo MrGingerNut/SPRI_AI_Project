@@ -1,5 +1,5 @@
 ## Dataset y Archivos
-Debido al tamaño, los archivos ZIP del dataset se encuentran alojados aquí:
+Debido al tamaño, los archivos .zip de las imagenes satelitales y las carpetas con los datasets generados se encuentran alojados en los siguientes directorios de Google Drive:
 
 [Descargar imagenes satelitales para entrenamiento (.zip)](https://drive.google.com/drive/folders/1nfzoWN7Ft0nfyd2mVpFfRuJjtQxjJaKL?usp=sharing)
 
