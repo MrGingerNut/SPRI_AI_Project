@@ -1,0 +1,27 @@
+  Detalles de cada directorio y código y la función que realiza cada uno
+
+Dataset/ -> Directorio que contiene las carpetas con los recortes true y mask en las carpetas Crops, ademas de las carpetas dedicadas a las imagenes combinadas de 4 bandas, las imagenes satelitales para entrenamiento y para prueba del modelo
+
+  Generar4bands.py -> codigo para generar imagenes de 4 bandas a partir de un directorio que contenga las imagenes satelitales descargadas de Copernicus Browser
+  generate_wildfire_dataset.py -> codigo para generar el dataset para entrenamiento a partir de un directorio que contenga las imagenes satelitales. Dentro del codigo se definen los directorios de entrada y salida, el tipo de dato, el formato de guardado, tamaño de imagen y el umbral de deteccion
+  mover.py -> codigo para copiar el dataset una vez generado a una ubicacion para realizar el entrenamiento. El codigo toma las imagenes y las copia de acuerdo a la organizacion de direcctorio requerida por los codigos para entrenamiento, al mismo tiempo toma el 80% de las imagenes y las escribe en train.txt y el 20% restante en valid.txt
+  Recortar_true_mask.py -> codigo para generar los bloques true y mask a partir de imagenes de 4 bandas (para pruebas)
+
+  Crops/ -> directorio con el dataset con deteccion de incendio de 20% por bloque
+  Crops2/ -> directorio con el dataset con deteccion de incendio de 10% por bloque
+  Crops3/ -> directorio con el dataset con deteccion de incendio de 5% por bloque
+
+Prueba/ -> directorio con codigos para visualizacion del modelo
+
+Wildfire/ -> directorio que contiene los codigos referentes al entrenamiento y prueba del modelo
+
+  Images/ -> directorio con los recortes de las imagenes true 
+  ImageSets/Segmentation/ -> directorio con los archivos train.txt y valid.txt
+  SegmentationClass/ -> directorio con los recortes de las imagenes mask
+
+  applyWildfireNet4B.py -> codigo para probar el modelo entrenado, recibe como argumentos --input <imagen de 4 bandas.tif> y --output <nombre imagen salida.tif>
+  datasetAugmentationWildFire4B.py -> codigo para realizar las aumentaciones con las rotaciones y obtencion de mean y std, geenera el archivo dataset_statistics.txt con el reporte de salida
+  f1score_trace y f1score_max_trace -> archivos de texto con los logs de accuracity al entrenar
+  mainTrainEvalWildFireModelResidual4B128.py -> codigo para realizar el entrenamiento del modelo, genera los archivos f1score y trace_epoch para logs de loss y accuracity y los archivos .pth
+  wildfire_model.py -> codigo que contiene el modelo de la red adaptado para 4 bandas
+  
