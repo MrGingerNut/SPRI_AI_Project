@@ -17,6 +17,7 @@ __pycache__/
 models/
 data/
 Raw/
+Crops/
 
 # Ignorar configuraciones del editor
 .vscode/
