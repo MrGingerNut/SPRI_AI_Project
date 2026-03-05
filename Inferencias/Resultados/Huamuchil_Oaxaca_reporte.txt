@@ -1,0 +1,42 @@
+======================================================================
+REPORTE MULTI-ARQUITECTURA — Huamuchil_Oaxaca
+Generado: 2026-03-03 12:36:47
+======================================================================
+
+──────────────────────────────────────────────────
+ARQUITECTURA: Wildfire
+──────────────────────────────────────────────────
+Píxeles incendio (referencia) :     20,745
+Píxeles incendio (predicción) :     21,539
+Píxeles errados               :      5,580  (26.90%)
+
+Matriz de confusión:
+  VP=18,352  FP=3,187  FN=2,393  VN=58,592
+
+Métricas:
+  Precisión      : 85.20%
+  Recall         : 88.46%
+  F1-Score       : 86.80%
+  Exactitud      : 93.24%
+  Especificidad  : 94.84%
+
+──────────────────────────────────────────────────
+ARQUITECTURA: UNet
+──────────────────────────────────────────────────
+Píxeles incendio (referencia) :     20,745
+Píxeles incendio (predicción) :      7,776
+Píxeles errados               :     16,775  (80.86%)
+
+Matriz de confusión:
+  VP=5,873  FP=1,903  FN=14,872  VN=59,876
+
+Métricas:
+  Precisión      : 75.53%
+  Recall         : 28.31%
+  F1-Score       : 41.18%
+  Exactitud      : 79.67%
+  Especificidad  : 96.92%
+
+======================================================================
+FIN DEL REPORTE
+======================================================================

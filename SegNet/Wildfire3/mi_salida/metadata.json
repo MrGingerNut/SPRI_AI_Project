@@ -1,0 +1,1199 @@
+{
+  "model_name": "Wildfire3_N_128_AUG_1",
+  "original_file": "Wildfire3_N__128__AUG_1_best.pth",
+  "conversion_date": "2026-01-27T23:28:54",
+  "layers": [
+    {
+      "id": 0,
+      "original_name": "layer1.0.weight",
+      "safe_name": "layer1_0_weight",
+      "shape": [
+        32,
+        4,
+        3,
+        3
+      ],
+      "dtype": "float32",
+      "size_bytes": 4608,
+      "size_mb": 0.004,
+      "mean": 0.0025864052586257458,
+      "std": 0.2938801050186157,
+      "min": -1.349609136581421,
+      "max": 1.3096327781677246
+    },
+    {
+      "id": 1,
+      "original_name": "layer1.0.bias",
+      "safe_name": "layer1_0_bias",
+      "shape": [
+        32
+      ],
+      "dtype": "float32",
+      "size_bytes": 128,
+      "size_mb": 0.0,
+      "mean": -5.758367478847504e-05,
+      "std": 0.11527272313833237,
+      "min": -0.16130271553993225,
+      "max": 0.16318023204803467
+    },
+    {
+      "id": 2,
+      "original_name": "layer1.1.weight",
+      "safe_name": "layer1_1_weight",
+      "shape": [
+        32
+      ],
+      "dtype": "float32",
+      "size_bytes": 128,
+      "size_mb": 0.0,
+      "mean": 0.8957598209381104,
+      "std": 0.18232783675193787,
+      "min": 0.5765961408615112,
+      "max": 1.3943177461624146
+    },
+    {
+      "id": 3,
+      "original_name": "layer1.1.bias",
+      "safe_name": "layer1_1_bias",
+      "shape": [
+        32
+      ],
+      "dtype": "float32",
+      "size_bytes": 128,
+      "size_mb": 0.0,
+      "mean": 0.013583207502961159,
+      "std": 0.1609039306640625,
+      "min": -0.2935003638267517,
+      "max": 0.4350144565105438
+    },
+    {
+      "id": 4,
+      "original_name": "layer1.1.running_mean",
+      "safe_name": "layer1_1_running_mean",
+      "shape": [
+        32
+      ],
+      "dtype": "float32",
+      "size_bytes": 128,
+      "size_mb": 0.0,
+      "mean": 0.0006916560232639313,
+      "std": 0.11716563999652863,
+      "min": -0.16642791032791138,
+      "max": 0.16892188787460327
+    },
+    {
+      "id": 5,
+      "original_name": "layer1.1.running_var",
+      "safe_name": "layer1_1_running_var",
+      "shape": [
+        32
+      ],
+      "dtype": "float32",
+      "size_bytes": 128,
+      "size_mb": 0.0,
+      "mean": 3.981050729751587,
+      "std": 3.0904624462127686,
+      "min": 0.31934332847595215,
+      "max": 12.153154373168945
+    },
+    {
+      "id": 6,
+      "original_name": "res1.net.0.weight",
+      "safe_name": "res1_net_0_weight",
+      "shape": [
+        32,
+        32,
+        3,
+        3
+      ],
+      "dtype": "float32",
+      "size_bytes": 36864,
+      "size_mb": 0.035,
+      "mean": -0.004932225216180086,
+      "std": 0.1042717918753624,
+      "min": -0.4684634208679199,
+      "max": 0.4350392818450928
+    },
+    {
+      "id": 7,
+      "original_name": "res1.net.0.bias",
+      "safe_name": "res1_net_0_bias",
+      "shape": [
+        32
+      ],
+      "dtype": "float32",
+      "size_bytes": 128,
+      "size_mb": 0.0,
+      "mean": -0.01150420680642128,
+      "std": 0.033284299075603485,
+      "min": -0.05622492730617523,
+      "max": 0.05747118964791298
+    },
+    {
+      "id": 8,
+      "original_name": "res1.net.1.weight",
+      "safe_name": "res1_net_1_weight",
+      "shape": [
+        32
+      ],
+      "dtype": "float32",
+      "size_bytes": 128,
+      "size_mb": 0.0,
+      "mean": 0.9954103231430054,
+      "std": 0.1628144234418869,
+      "min": 0.68610018491745,
+      "max": 1.2576302289962769
+    },
+    {
+      "id": 9,
+      "original_name": "res1.net.1.bias",
+      "safe_name": "res1_net_1_bias",
+      "shape": [
+        32
+      ],
+      "dtype": "float32",
+      "size_bytes": 128,
+      "size_mb": 0.0,
+      "mean": -0.04224643111228943,
+      "std": 0.14348146319389343,
+      "min": -0.3022460639476776,
+      "max": 0.2970382869243622
+    },
+    {
+      "id": 10,
+      "original_name": "res1.net.1.running_mean",
+      "safe_name": "res1_net_1_running_mean",
+      "shape": [
+        32
+      ],
+      "dtype": "float32",
+      "size_bytes": 128,
+      "size_mb": 0.0,
+      "mean": -0.40696972608566284,
+      "std": 0.7527801990509033,
+      "min": -1.8338251113891602,
+      "max": 1.3987537622451782
+    },
+    {
+      "id": 11,
+      "original_name": "res1.net.1.running_var",
+      "safe_name": "res1_net_1_running_var",
+      "shape": [
+        32
+      ],
+      "dtype": "float32",
+      "size_bytes": 128,
+      "size_mb": 0.0,
+      "mean": 1.6428934335708618,
+      "std": 0.9278644323348999,
+      "min": 0.2740088105201721,
+      "max": 3.8683924674987793
+    },
+    {
+      "id": 12,
+      "original_name": "res1.net.2.weight",
+      "safe_name": "res1_net_2_weight",
+      "shape": [
+        1
+      ],
+      "dtype": "float32",
+      "size_bytes": 4,
+      "size_mb": 0.0,
+      "mean": -0.10150420665740967,
+      "std": 0.0,
+      "min": -0.10150420665740967,
+      "max": -0.10150420665740967
+    },
+    {
+      "id": 13,
+      "original_name": "res1.net.3.weight",
+      "safe_name": "res1_net_3_weight",
+      "shape": [
+        32,
+        32,
+        3,
+        3
+      ],
+      "dtype": "float32",
+      "size_bytes": 36864,
+      "size_mb": 0.035,
+      "mean": 0.0009955561254173517,
+      "std": 0.10478431731462479,
+      "min": -0.5855271816253662,
+      "max": 0.5125455260276794
+    },
+    {
+      "id": 14,
+      "original_name": "res1.net.3.bias",
+      "safe_name": "res1_net_3_bias",
+      "shape": [
+        32
+      ],
+      "dtype": "float32",
+      "size_bytes": 128,
+      "size_mb": 0.0,
+      "mean": -0.004095332231372595,
+      "std": 0.03561599925160408,
+      "min": -0.05681072920560837,
+      "max": 0.048862751573324203
+    },
+    {
+      "id": 15,
+      "original_name": "res1.net.4.weight",
+      "safe_name": "res1_net_4_weight",
+      "shape": [
+        32
+      ],
+      "dtype": "float32",
+      "size_bytes": 128,
+      "size_mb": 0.0,
+      "mean": 1.0812915563583374,
+      "std": 0.1427341103553772,
+      "min": 0.8396080732345581,
+      "max": 1.4349045753479004
+    },
+    {
+      "id": 16,
+      "original_name": "res1.net.4.bias",
+      "safe_name": "res1_net_4_bias",
+      "shape": [
+        32
+      ],
+      "dtype": "float32",
+      "size_bytes": 128,
+      "size_mb": 0.0,
+      "mean": -0.06666728109121323,
+      "std": 0.055591847747564316,
+      "min": -0.17893393337726593,
+      "max": 0.07942456752061844
+    },
+    {
+      "id": 17,
+      "original_name": "res1.net.4.running_mean",
+      "safe_name": "res1_net_4_running_mean",
+      "shape": [
+        32
+      ],
+      "dtype": "float32",
+      "size_bytes": 128,
+      "size_mb": 0.0,
+      "mean": 0.07422560453414917,
+      "std": 0.6306928992271423,
+      "min": -1.7127883434295654,
+      "max": 0.9387010335922241
+    },
+    {
+      "id": 18,
+      "original_name": "res1.net.4.running_var",
+      "safe_name": "res1_net_4_running_var",
+      "shape": [
+        32
+      ],
+      "dtype": "float32",
+      "size_bytes": 128,
+      "size_mb": 0.0,
+      "mean": 1.1988394260406494,
+      "std": 0.6650695204734802,
+      "min": 0.5534120798110962,
+      "max": 2.8616631031036377
+    },
+    {
+      "id": 19,
+      "original_name": "convMaxToRes2.0.weight",
+      "safe_name": "convMaxToRes2_0_weight",
+      "shape": [
+        64,
+        32,
+        3,
+        3
+      ],
+      "dtype": "float32",
+      "size_bytes": 73728,
+      "size_mb": 0.07,
+      "mean": -0.004075252451002598,
+      "std": 0.09480155259370804,
+      "min": -0.47608688473701477,
+      "max": 0.364849328994751
+    },
+    {
+      "id": 20,
+      "original_name": "convMaxToRes2.0.bias",
+      "safe_name": "convMaxToRes2_0_bias",
+      "shape": [
+        64
+      ],
+      "dtype": "float32",
+      "size_bytes": 256,
+      "size_mb": 0.0,
+      "mean": -0.005099334288388491,
+      "std": 0.035145532339811325,
+      "min": -0.05847914516925812,
+      "max": 0.057968929409980774
+    },
+    {
+      "id": 21,
+      "original_name": "convMaxToRes2.1.weight",
+      "safe_name": "convMaxToRes2_1_weight",
+      "shape": [
+        64
+      ],
+      "dtype": "float32",
+      "size_bytes": 256,
+      "size_mb": 0.0,
+      "mean": 0.9842813611030579,
+      "std": 0.0900677740573883,
+      "min": 0.7364030480384827,
+      "max": 1.1631982326507568
+    },
+    {
+      "id": 22,
+      "original_name": "convMaxToRes2.1.bias",
+      "safe_name": "convMaxToRes2_1_bias",
+      "shape": [
+        64
+      ],
+      "dtype": "float32",
+      "size_bytes": 256,
+      "size_mb": 0.0,
+      "mean": -0.05825194716453552,
+      "std": 0.15933331847190857,
+      "min": -0.5482688546180725,
+      "max": 0.23292276263237
+    },
+    {
+      "id": 23,
+      "original_name": "convMaxToRes2.1.running_mean",
+      "safe_name": "convMaxToRes2_1_running_mean",
+      "shape": [
+        64
+      ],
+      "dtype": "float32",
+      "size_bytes": 256,
+      "size_mb": 0.0,
+      "mean": -0.6024882793426514,
+      "std": 2.1468801498413086,
+      "min": -6.237583637237549,
+      "max": 3.8034353256225586
+    },
+    {
+      "id": 24,
+      "original_name": "convMaxToRes2.1.running_var",
+      "safe_name": "convMaxToRes2_1_running_var",
+      "shape": [
+        64
+      ],
+      "dtype": "float32",
+      "size_bytes": 256,
+      "size_mb": 0.0,
+      "mean": 7.491299152374268,
+      "std": 2.963348865509033,
+      "min": 3.7728185653686523,
+      "max": 16.0589656829834
+    },
+    {
+      "id": 25,
+      "original_name": "res2.net.0.weight",
+      "safe_name": "res2_net_0_weight",
+      "shape": [
+        64,
+        64,
+        3,
+        3
+      ],
+      "dtype": "float32",
+      "size_bytes": 147456,
+      "size_mb": 0.141,
+      "mean": -0.0004106143314857036,
+      "std": 0.06986960768699646,
+      "min": -0.38808685541152954,
+      "max": 0.318675696849823
+    },
+    {
+      "id": 26,
+      "original_name": "res2.net.0.bias",
+      "safe_name": "res2_net_0_bias",
+      "shape": [
+        64
+      ],
+      "dtype": "float32",
+      "size_bytes": 256,
+      "size_mb": 0.0,
+      "mean": 0.00769239803776145,
+      "std": 0.021630603820085526,
+      "min": -0.041514478623867035,
+      "max": 0.0409155897796154
+    },
+    {
+      "id": 27,
+      "original_name": "res2.net.1.weight",
+      "safe_name": "res2_net_1_weight",
+      "shape": [
+        64
+      ],
+      "dtype": "float32",
+      "size_bytes": 256,
+      "size_mb": 0.0,
+      "mean": 0.9948357939720154,
+      "std": 0.06140351668000221,
+      "min": 0.8804307579994202,
+      "max": 1.2024757862091064
+    },
+    {
+      "id": 28,
+      "original_name": "res2.net.1.bias",
+      "safe_name": "res2_net_1_bias",
+      "shape": [
+        64
+      ],
+      "dtype": "float32",
+      "size_bytes": 256,
+      "size_mb": 0.0,
+      "mean": -0.026300566270947456,
+      "std": 0.1334896981716156,
+      "min": -0.42871230840682983,
+      "max": 0.2552853524684906
+    },
+    {
+      "id": 29,
+      "original_name": "res2.net.1.running_mean",
+      "safe_name": "res2_net_1_running_mean",
+      "shape": [
+        64
+      ],
+      "dtype": "float32",
+      "size_bytes": 256,
+      "size_mb": 0.0,
+      "mean": -0.09260138869285583,
+      "std": 0.7228538393974304,
+      "min": -1.6792049407958984,
+      "max": 1.8799142837524414
+    },
+    {
+      "id": 30,
+      "original_name": "res2.net.1.running_var",
+      "safe_name": "res2_net_1_running_var",
+      "shape": [
+        64
+      ],
+      "dtype": "float32",
+      "size_bytes": 256,
+      "size_mb": 0.0,
+      "mean": 1.398764729499817,
+      "std": 0.622542142868042,
+      "min": 0.2976386249065399,
+      "max": 3.1105148792266846
+    },
+    {
+      "id": 31,
+      "original_name": "res2.net.2.weight",
+      "safe_name": "res2_net_2_weight",
+      "shape": [
+        1
+      ],
+      "dtype": "float32",
+      "size_bytes": 4,
+      "size_mb": 0.0,
+      "mean": -0.4278937876224518,
+      "std": 0.0,
+      "min": -0.4278937876224518,
+      "max": -0.4278937876224518
+    },
+    {
+      "id": 32,
+      "original_name": "res2.net.3.weight",
+      "safe_name": "res2_net_3_weight",
+      "shape": [
+        64,
+        64,
+        3,
+        3
+      ],
+      "dtype": "float32",
+      "size_bytes": 147456,
+      "size_mb": 0.141,
+      "mean": -0.00017718554590828717,
+      "std": 0.06488211452960968,
+      "min": -0.28132766485214233,
+      "max": 0.274480938911438
+    },
+    {
+      "id": 33,
+      "original_name": "res2.net.3.bias",
+      "safe_name": "res2_net_3_bias",
+      "shape": [
+        64
+      ],
+      "dtype": "float32",
+      "size_bytes": 256,
+      "size_mb": 0.0,
+      "mean": 0.0006789103499613702,
+      "std": 0.023529497906565666,
+      "min": -0.040022112429142,
+      "max": 0.04112552851438522
+    },
+    {
+      "id": 34,
+      "original_name": "res2.net.4.weight",
+      "safe_name": "res2_net_4_weight",
+      "shape": [
+        64
+      ],
+      "dtype": "float32",
+      "size_bytes": 256,
+      "size_mb": 0.0,
+      "mean": 0.9434947967529297,
+      "std": 0.06108075752854347,
+      "min": 0.8134177923202515,
+      "max": 1.104108214378357
+    },
+    {
+      "id": 35,
+      "original_name": "res2.net.4.bias",
+      "safe_name": "res2_net_4_bias",
+      "shape": [
+        64
+      ],
+      "dtype": "float32",
+      "size_bytes": 256,
+      "size_mb": 0.0,
+      "mean": -0.007193600293248892,
+      "std": 0.027007438242435455,
+      "min": -0.05010383948683739,
+      "max": 0.057842254638671875
+    },
+    {
+      "id": 36,
+      "original_name": "res2.net.4.running_mean",
+      "safe_name": "res2_net_4_running_mean",
+      "shape": [
+        64
+      ],
+      "dtype": "float32",
+      "size_bytes": 256,
+      "size_mb": 0.0,
+      "mean": -0.05874194577336311,
+      "std": 0.9509973526000977,
+      "min": -2.4259676933288574,
+      "max": 1.868696928024292
+    },
+    {
+      "id": 37,
+      "original_name": "res2.net.4.running_var",
+      "safe_name": "res2_net_4_running_var",
+      "shape": [
+        64
+      ],
+      "dtype": "float32",
+      "size_bytes": 256,
+      "size_mb": 0.0,
+      "mean": 1.0740561485290527,
+      "std": 0.36217156052589417,
+      "min": 0.5867656469345093,
+      "max": 2.4094185829162598
+    },
+    {
+      "id": 38,
+      "original_name": "res3.net.0.weight",
+      "safe_name": "res3_net_0_weight",
+      "shape": [
+        64,
+        64,
+        3,
+        3
+      ],
+      "dtype": "float32",
+      "size_bytes": 147456,
+      "size_mb": 0.141,
+      "mean": -0.00046168360859155655,
+      "std": 0.06643751263618469,
+      "min": -0.3634883165359497,
+      "max": 0.27946558594703674
+    },
+    {
+      "id": 39,
+      "original_name": "res3.net.0.bias",
+      "safe_name": "res3_net_0_bias",
+      "shape": [
+        64
+      ],
+      "dtype": "float32",
+      "size_bytes": 256,
+      "size_mb": 0.0,
+      "mean": 0.0003981228219345212,
+      "std": 0.023486802354454994,
+      "min": -0.03956316038966179,
+      "max": 0.04155183956027031
+    },
+    {
+      "id": 40,
+      "original_name": "res3.net.1.weight",
+      "safe_name": "res3_net_1_weight",
+      "shape": [
+        64
+      ],
+      "dtype": "float32",
+      "size_bytes": 256,
+      "size_mb": 0.0,
+      "mean": 0.9974589347839355,
+      "std": 0.058912985026836395,
+      "min": 0.8481800556182861,
+      "max": 1.1496598720550537
+    },
+    {
+      "id": 41,
+      "original_name": "res3.net.1.bias",
+      "safe_name": "res3_net_1_bias",
+      "shape": [
+        64
+      ],
+      "dtype": "float32",
+      "size_bytes": 256,
+      "size_mb": 0.0,
+      "mean": -0.016778482124209404,
+      "std": 0.13476324081420898,
+      "min": -0.4843931496143341,
+      "max": 0.27846279740333557
+    },
+    {
+      "id": 42,
+      "original_name": "res3.net.1.running_mean",
+      "safe_name": "res3_net_1_running_mean",
+      "shape": [
+        64
+      ],
+      "dtype": "float32",
+      "size_bytes": 256,
+      "size_mb": 0.0,
+      "mean": -0.08570490032434464,
+      "std": 0.5713713765144348,
+      "min": -1.7218968868255615,
+      "max": 1.1106127500534058
+    },
+    {
+      "id": 43,
+      "original_name": "res3.net.1.running_var",
+      "safe_name": "res3_net_1_running_var",
+      "shape": [
+        64
+      ],
+      "dtype": "float32",
+      "size_bytes": 256,
+      "size_mb": 0.0,
+      "mean": 6.683049201965332,
+      "std": 2.9038784503936768,
+      "min": 2.2995822429656982,
+      "max": 20.25012969970703
+    },
+    {
+      "id": 44,
+      "original_name": "res3.net.2.weight",
+      "safe_name": "res3_net_2_weight",
+      "shape": [
+        1
+      ],
+      "dtype": "float32",
+      "size_bytes": 4,
+      "size_mb": 0.0,
+      "mean": -0.5951520204544067,
+      "std": 0.0,
+      "min": -0.5951520204544067,
+      "max": -0.5951520204544067
+    },
+    {
+      "id": 45,
+      "original_name": "res3.net.3.weight",
+      "safe_name": "res3_net_3_weight",
+      "shape": [
+        64,
+        64,
+        3,
+        3
+      ],
+      "dtype": "float32",
+      "size_bytes": 147456,
+      "size_mb": 0.141,
+      "mean": 0.0005311528220772743,
+      "std": 0.062003448605537415,
+      "min": -0.25922471284866333,
+      "max": 0.26179996132850647
+    },
+    {
+      "id": 46,
+      "original_name": "res3.net.3.bias",
+      "safe_name": "res3_net_3_bias",
+      "shape": [
+        64
+      ],
+      "dtype": "float32",
+      "size_bytes": 256,
+      "size_mb": 0.0,
+      "mean": 0.0037488576490432024,
+      "std": 0.022100653499364853,
+      "min": -0.0405455157160759,
+      "max": 0.041570231318473816
+    },
+    {
+      "id": 47,
+      "original_name": "res3.net.4.weight",
+      "safe_name": "res3_net_4_weight",
+      "shape": [
+        64
+      ],
+      "dtype": "float32",
+      "size_bytes": 256,
+      "size_mb": 0.0,
+      "mean": 1.054958462715149,
+      "std": 0.11464191973209381,
+      "min": 0.7932111024856567,
+      "max": 1.4396988153457642
+    },
+    {
+      "id": 48,
+      "original_name": "res3.net.4.bias",
+      "safe_name": "res3_net_4_bias",
+      "shape": [
+        64
+      ],
+      "dtype": "float32",
+      "size_bytes": 256,
+      "size_mb": 0.0,
+      "mean": -0.0017183724557980895,
+      "std": 0.014897838234901428,
+      "min": -0.03912379965186119,
+      "max": 0.030040962621569633
+    },
+    {
+      "id": 49,
+      "original_name": "res3.net.4.running_mean",
+      "safe_name": "res3_net_4_running_mean",
+      "shape": [
+        64
+      ],
+      "dtype": "float32",
+      "size_bytes": 256,
+      "size_mb": 0.0,
+      "mean": 0.20717541873455048,
+      "std": 1.1797680854797363,
+      "min": -2.266993761062622,
+      "max": 4.267520427703857
+    },
+    {
+      "id": 50,
+      "original_name": "res3.net.4.running_var",
+      "safe_name": "res3_net_4_running_var",
+      "shape": [
+        64
+      ],
+      "dtype": "float32",
+      "size_bytes": 256,
+      "size_mb": 0.0,
+      "mean": 1.0163378715515137,
+      "std": 0.620758056640625,
+      "min": 0.22356897592544556,
+      "max": 3.781017780303955
+    },
+    {
+      "id": 51,
+      "original_name": "convRes3ToUnPool.0.weight",
+      "safe_name": "convRes3ToUnPool_0_weight",
+      "shape": [
+        32,
+        64,
+        3,
+        3
+      ],
+      "dtype": "float32",
+      "size_bytes": 73728,
+      "size_mb": 0.07,
+      "mean": -0.00010315372492186725,
+      "std": 0.06421665847301483,
+      "min": -0.2975759506225586,
+      "max": 0.3248392641544342
+    },
+    {
+      "id": 52,
+      "original_name": "convRes3ToUnPool.0.bias",
+      "safe_name": "convRes3ToUnPool_0_bias",
+      "shape": [
+        32
+      ],
+      "dtype": "float32",
+      "size_bytes": 128,
+      "size_mb": 0.0,
+      "mean": 0.004352898336946964,
+      "std": 0.023054877296090126,
+      "min": -0.038507699966430664,
+      "max": 0.038543008267879486
+    },
+    {
+      "id": 53,
+      "original_name": "convRes3ToUnPool.1.weight",
+      "safe_name": "convRes3ToUnPool_1_weight",
+      "shape": [
+        32
+      ],
+      "dtype": "float32",
+      "size_bytes": 128,
+      "size_mb": 0.0,
+      "mean": 0.9124791622161865,
+      "std": 0.14168941974639893,
+      "min": 0.6544206142425537,
+      "max": 1.2407382726669312
+    },
+    {
+      "id": 54,
+      "original_name": "convRes3ToUnPool.1.bias",
+      "safe_name": "convRes3ToUnPool_1_bias",
+      "shape": [
+        32
+      ],
+      "dtype": "float32",
+      "size_bytes": 128,
+      "size_mb": 0.0,
+      "mean": -0.1596279740333557,
+      "std": 0.27971744537353516,
+      "min": -0.9188995361328125,
+      "max": 0.47897154092788696
+    },
+    {
+      "id": 55,
+      "original_name": "convRes3ToUnPool.1.running_mean",
+      "safe_name": "convRes3ToUnPool_1_running_mean",
+      "shape": [
+        32
+      ],
+      "dtype": "float32",
+      "size_bytes": 128,
+      "size_mb": 0.0,
+      "mean": -0.10818010568618774,
+      "std": 0.5280501842498779,
+      "min": -1.2235110998153687,
+      "max": 0.9699476361274719
+    },
+    {
+      "id": 56,
+      "original_name": "convRes3ToUnPool.1.running_var",
+      "safe_name": "convRes3ToUnPool_1_running_var",
+      "shape": [
+        32
+      ],
+      "dtype": "float32",
+      "size_bytes": 128,
+      "size_mb": 0.0,
+      "mean": 10.000374794006348,
+      "std": 3.7227649688720703,
+      "min": 3.528291940689087,
+      "max": 17.54494857788086
+    },
+    {
+      "id": 57,
+      "original_name": "res4.net.0.weight",
+      "safe_name": "res4_net_0_weight",
+      "shape": [
+        32,
+        32,
+        3,
+        3
+      ],
+      "dtype": "float32",
+      "size_bytes": 36864,
+      "size_mb": 0.035,
+      "mean": -0.0020047787111252546,
+      "std": 0.08457646518945694,
+      "min": -0.3491806387901306,
+      "max": 0.35088247060775757
+    },
+    {
+      "id": 58,
+      "original_name": "res4.net.0.bias",
+      "safe_name": "res4_net_0_bias",
+      "shape": [
+        32
+      ],
+      "dtype": "float32",
+      "size_bytes": 128,
+      "size_mb": 0.0,
+      "mean": -0.015306408517062664,
+      "std": 0.030759988352656364,
+      "min": -0.057560160756111145,
+      "max": 0.05040251836180687
+    },
+    {
+      "id": 59,
+      "original_name": "res4.net.1.weight",
+      "safe_name": "res4_net_1_weight",
+      "shape": [
+        32
+      ],
+      "dtype": "float32",
+      "size_bytes": 128,
+      "size_mb": 0.0,
+      "mean": 0.9854347109794617,
+      "std": 0.11401397734880447,
+      "min": 0.8171679973602295,
+      "max": 1.3548800945281982
+    },
+    {
+      "id": 60,
+      "original_name": "res4.net.1.bias",
+      "safe_name": "res4_net_1_bias",
+      "shape": [
+        32
+      ],
+      "dtype": "float32",
+      "size_bytes": 128,
+      "size_mb": 0.0,
+      "mean": 0.07009314000606537,
+      "std": 0.12125010788440704,
+      "min": -0.15533393621444702,
+      "max": 0.3982585370540619
+    },
+    {
+      "id": 61,
+      "original_name": "res4.net.1.running_mean",
+      "safe_name": "res4_net_1_running_mean",
+      "shape": [
+        32
+      ],
+      "dtype": "float32",
+      "size_bytes": 128,
+      "size_mb": 0.0,
+      "mean": -0.048285748809576035,
+      "std": 0.19028127193450928,
+      "min": -0.5284113883972168,
+      "max": 0.5057104825973511
+    },
+    {
+      "id": 62,
+      "original_name": "res4.net.1.running_var",
+      "safe_name": "res4_net_1_running_var",
+      "shape": [
+        32
+      ],
+      "dtype": "float32",
+      "size_bytes": 128,
+      "size_mb": 0.0,
+      "mean": 0.2951338291168213,
+      "std": 0.12443668395280838,
+      "min": 0.1504053920507431,
+      "max": 0.599851667881012
+    },
+    {
+      "id": 63,
+      "original_name": "res4.net.2.weight",
+      "safe_name": "res4_net_2_weight",
+      "shape": [
+        1
+      ],
+      "dtype": "float32",
+      "size_bytes": 4,
+      "size_mb": 0.0,
+      "mean": 0.12400254607200623,
+      "std": 0.0,
+      "min": 0.12400254607200623,
+      "max": 0.12400254607200623
+    },
+    {
+      "id": 64,
+      "original_name": "res4.net.3.weight",
+      "safe_name": "res4_net_3_weight",
+      "shape": [
+        32,
+        32,
+        3,
+        3
+      ],
+      "dtype": "float32",
+      "size_bytes": 36864,
+      "size_mb": 0.035,
+      "mean": -0.0004923279630020261,
+      "std": 0.08481556922197342,
+      "min": -0.34884557127952576,
+      "max": 0.3419327735900879
+    },
+    {
+      "id": 65,
+      "original_name": "res4.net.3.bias",
+      "safe_name": "res4_net_3_bias",
+      "shape": [
+        32
+      ],
+      "dtype": "float32",
+      "size_bytes": 128,
+      "size_mb": 0.0,
+      "mean": 0.0068420059978961945,
+      "std": 0.03438413888216019,
+      "min": -0.05260815471410751,
+      "max": 0.05871564522385597
+    },
+    {
+      "id": 66,
+      "original_name": "res4.net.4.weight",
+      "safe_name": "res4_net_4_weight",
+      "shape": [
+        32
+      ],
+      "dtype": "float32",
+      "size_bytes": 128,
+      "size_mb": 0.0,
+      "mean": 1.0223300457000732,
+      "std": 0.02962552197277546,
+      "min": 0.9714644551277161,
+      "max": 1.0999940633773804
+    },
+    {
+      "id": 67,
+      "original_name": "res4.net.4.bias",
+      "safe_name": "res4_net_4_bias",
+      "shape": [
+        32
+      ],
+      "dtype": "float32",
+      "size_bytes": 128,
+      "size_mb": 0.0,
+      "mean": -0.0137929143384099,
+      "std": 0.07585439085960388,
+      "min": -0.17018724977970123,
+      "max": 0.1588708460330963
+    },
+    {
+      "id": 68,
+      "original_name": "res4.net.4.running_mean",
+      "safe_name": "res4_net_4_running_mean",
+      "shape": [
+        32
+      ],
+      "dtype": "float32",
+      "size_bytes": 128,
+      "size_mb": 0.0,
+      "mean": -0.03215017914772034,
+      "std": 0.9526310563087463,
+      "min": -2.354576826095581,
+      "max": 3.4228427410125732
+    },
+    {
+      "id": 69,
+      "original_name": "res4.net.4.running_var",
+      "safe_name": "res4_net_4_running_var",
+      "shape": [
+        32
+      ],
+      "dtype": "float32",
+      "size_bytes": 128,
+      "size_mb": 0.0,
+      "mean": 1.5189621448516846,
+      "std": 0.957861065864563,
+      "min": 0.5649265050888062,
+      "max": 4.820223808288574
+    },
+    {
+      "id": 70,
+      "original_name": "last.0.weight",
+      "safe_name": "last_0_weight",
+      "shape": [
+        2,
+        32,
+        3,
+        3
+      ],
+      "dtype": "float32",
+      "size_bytes": 2304,
+      "size_mb": 0.002,
+      "mean": -0.006134620867669582,
+      "std": 0.09165867418050766,
+      "min": -0.3276928663253784,
+      "max": 0.25683584809303284
+    },
+    {
+      "id": 71,
+      "original_name": "last.0.bias",
+      "safe_name": "last_0_bias",
+      "shape": [
+        2
+      ],
+      "dtype": "float32",
+      "size_bytes": 8,
+      "size_mb": 0.0,
+      "mean": -0.0176228079944849,
+      "std": 0.0044015925377607346,
+      "min": -0.022024400532245636,
+      "max": -0.013221215456724167
+    },
+    {
+      "id": 72,
+      "original_name": "last.1.weight",
+      "safe_name": "last_1_weight",
+      "shape": [
+        2
+      ],
+      "dtype": "float32",
+      "size_bytes": 8,
+      "size_mb": 0.0,
+      "mean": 3.5534181594848633,
+      "std": 0.07254266738891602,
+      "min": 3.4808754920959473,
+      "max": 3.6259608268737793
+    },
+    {
+      "id": 73,
+      "original_name": "last.1.bias",
+      "safe_name": "last_1_bias",
+      "shape": [
+        2
+      ],
+      "dtype": "float32",
+      "size_bytes": 8,
+      "size_mb": 0.0,
+      "mean": -0.00012254714965820312,
+      "std": 2.23947811126709,
+      "min": -2.239600658416748,
+      "max": 2.2393555641174316
+    },
+    {
+      "id": 74,
+      "original_name": "last.1.running_mean",
+      "safe_name": "last_1_running_mean",
+      "shape": [
+        2
+      ],
+      "dtype": "float32",
+      "size_bytes": 8,
+      "size_mb": 0.0,
+      "mean": -0.06148660182952881,
+      "std": 0.973090648651123,
+      "min": -1.0345772504806519,
+      "max": 0.9116040468215942
+    },
+    {
+      "id": 75,
+      "original_name": "last.1.running_var",
+      "safe_name": "last_1_running_var",
+      "shape": [
+        2
+      ],
+      "dtype": "float32",
+      "size_bytes": 8,
+      "size_mb": 0.0,
+      "mean": 33.107635498046875,
+      "std": 0.6346797943115234,
+      "min": 32.472957611083984,
+      "max": 33.74231719970703
+    }
+  ],
+  "total_parameters": 225486,
+  "total_size_mb": 0.8601608276367188,
+  "normalization": {
+    "mean": [
+      0.1527000069618225,
+      0.12160000205039978,
+      0.11180000007152557,
+      0.21490000188350677
+    ],
+    "std": [
+      0.061799999326467514,
+      0.04969999939203262,
+      0.04280000180006027,
+      0.09210000187158585
+    ]
+  }
+}

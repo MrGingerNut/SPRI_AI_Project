@@ -1,0 +1,42 @@
+======================================================================
+REPORTE MULTI-ARQUITECTURA — LasGarzas_Veracruz
+Generado: 2026-03-03 12:44:32
+======================================================================
+
+──────────────────────────────────────────────────
+ARQUITECTURA: Wildfire
+──────────────────────────────────────────────────
+Píxeles incendio (referencia) :      6,423
+Píxeles incendio (predicción) :      2,043
+Píxeles errados               :      5,814  (90.52%)
+
+Matriz de confusión:
+  VP=1,326  FP=717  FN=5,097  VN=44,940
+
+Métricas:
+  Precisión      : 64.90%
+  Recall         : 20.64%
+  F1-Score       : 31.33%
+  Exactitud      : 88.84%
+  Especificidad  : 98.43%
+
+──────────────────────────────────────────────────
+ARQUITECTURA: UNet
+──────────────────────────────────────────────────
+Píxeles incendio (referencia) :      6,423
+Píxeles incendio (predicción) :         62
+Píxeles errados               :      6,395  (99.56%)
+
+Matriz de confusión:
+  VP=45  FP=17  FN=6,378  VN=45,640
+
+Métricas:
+  Precisión      : 72.58%
+  Recall         : 0.70%
+  F1-Score       : 1.39%
+  Exactitud      : 87.72%
+  Especificidad  : 99.96%
+
+======================================================================
+FIN DEL REPORTE
+======================================================================

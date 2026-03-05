@@ -1,0 +1,42 @@
+======================================================================
+REPORTE MULTI-ARQUITECTURA — SantoDomingoZanatepec_Chiapas
+Generado: 2026-03-03 12:57:29
+======================================================================
+
+──────────────────────────────────────────────────
+ARQUITECTURA: Wildfire
+──────────────────────────────────────────────────
+Píxeles incendio (referencia) :      7,659
+Píxeles incendio (predicción) :      9,959
+Píxeles errados               :      4,512  (58.91%)
+
+Matriz de confusión:
+  VP=6,553  FP=3,406  FN=1,106  VN=51,067
+
+Métricas:
+  Precisión      : 65.80%
+  Recall         : 85.56%
+  F1-Score       : 74.39%
+  Exactitud      : 92.74%
+  Especificidad  : 93.75%
+
+──────────────────────────────────────────────────
+ARQUITECTURA: UNet
+──────────────────────────────────────────────────
+Píxeles incendio (referencia) :      7,659
+Píxeles incendio (predicción) :      7,535
+Píxeles errados               :      6,366  (83.12%)
+
+Matriz de confusión:
+  VP=4,414  FP=3,121  FN=3,245  VN=51,352
+
+Métricas:
+  Precisión      : 58.58%
+  Recall         : 57.63%
+  F1-Score       : 58.10%
+  Exactitud      : 89.75%
+  Especificidad  : 94.27%
+
+======================================================================
+FIN DEL REPORTE
+======================================================================

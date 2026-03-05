@@ -1,0 +1,42 @@
+======================================================================
+REPORTE MULTI-ARQUITECTURA — Jonuta_Tabasco
+Generado: 2026-03-03 12:42:15
+======================================================================
+
+──────────────────────────────────────────────────
+ARQUITECTURA: Wildfire
+──────────────────────────────────────────────────
+Píxeles incendio (referencia) :     40,488
+Píxeles incendio (predicción) :     82,421
+Píxeles errados               :     42,703  (105.47%)
+
+Matriz de confusión:
+  VP=40,103  FP=42,318  FN=385  VN=107,082
+
+Métricas:
+  Precisión      : 48.66%
+  Recall         : 99.05%
+  F1-Score       : 65.26%
+  Exactitud      : 77.51%
+  Especificidad  : 71.67%
+
+──────────────────────────────────────────────────
+ARQUITECTURA: UNet
+──────────────────────────────────────────────────
+Píxeles incendio (referencia) :     40,488
+Píxeles incendio (predicción) :     66,809
+Píxeles errados               :     32,025  (79.10%)
+
+Matriz de confusión:
+  VP=37,636  FP=29,173  FN=2,852  VN=120,227
+
+Métricas:
+  Precisión      : 56.33%
+  Recall         : 92.96%
+  F1-Score       : 70.15%
+  Exactitud      : 83.13%
+  Especificidad  : 80.47%
+
+======================================================================
+FIN DEL REPORTE
+======================================================================

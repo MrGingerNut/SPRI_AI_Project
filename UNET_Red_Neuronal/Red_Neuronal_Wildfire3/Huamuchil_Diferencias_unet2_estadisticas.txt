@@ -1,0 +1,64 @@
+======================================================================
+REPORTE DETALLADO DE COMPARACIÓN DE DETECCIÓN DE INCENDIOS
+======================================================================
+
+1. ESTADÍSTICAS GENERALES:
+----------------------------------------
+Total de píxeles: 82,524
+Píxeles de incendio (original): 20,745 (25.14% del total)
+Píxeles de incendio (predicción): 24,440 (29.62% del total)
+Píxeles errados: 9,557
+Porcentaje de error: 46.07%
+
+2. MATRIZ DE CONFUSIÓN:
+----------------------------------------
+                         Predicción
+                  Positivo     Negativo
+Real   Positivo     17814         2931
+       Negativo      6626        55153
+
+Distribución porcentual:
+  Verdaderos Positivos: 21.59%
+  Falsos Positivos: 8.03%
+  Falsos Negativos: 3.55%
+  Verdaderos Negativos: 66.83%
+
+3. MÉTRICAS DE PRECISIÓN:
+----------------------------------------
+Fórmulas de cálculo:
+  Precisión = VP / (VP + FP) = De los detectados, cuántos eran reales
+  Recall    = VP / (VP + FN) = De los reales, cuántos detectamos
+  F1-Score  = 2 * (Precisión * Recall) / (Precisión + Recall)
+  Exactitud = (VP + VN) / Total = Porcentaje total de aciertos
+  Especificidad = VN / (VN + FP) = Capacidad de detectar no incendios
+
+Resultados:
+  Precisión:     0.7289 (72.89%)
+  Recall:        0.8587 (85.87%)
+  F1-Score:      0.7885 (78.85%)
+  Exactitud:     0.8842 (88.42%)
+  Especificidad: 0.8927 (89.27%)
+
+4. LEYENDA DE COLORES EN IMAGEN DE DIFERENCIAS:
+----------------------------------------
+NOTA: Todas las imágenes tienen fondo blanco (255,255,255)
+
+• Rojo (255,0,0): Verdaderos Positivos (incendios detectados correctamente)
+• Azul oscuro (0,0,150): Falsos Negativos (incendios reales no detectados)
+• Azul brillante (0,0,255): Falsos Positivos (detectados erróneamente)
+• Blanco (255,255,255): Fondo sin cambios
+
+5. PROCESAMIENTO APLICADO:
+----------------------------------------
+• Imagen original: Se extrajeron píxeles rojos (R>200, G<100, B<100)
+• Imagen predicción: Se extrajeron múltiples tipos de píxeles:
+   - Píxeles ROJOS (R>200, G<50, B<50)
+   - Píxeles BLANCOS (R>200, G>200, B>200)
+   - Píxeles AMARILLOS (R>180, G>100, B<100)
+   - Cualquier píxel NO NEGRO (R>50 o G>50 o B>50)
+• Ambas imágenes convertidas a fondo blanco con incendios rojos
+• Imagen de diferencias creada sobre fondo blanco
+
+======================================================================
+FIN DEL REPORTE
+======================================================================

@@ -17,6 +17,8 @@ __pycache__/
 models/
 data/
 Raw/
+Test/
+Prueba/
 Crops/
 Images/
 SegmentationClass/

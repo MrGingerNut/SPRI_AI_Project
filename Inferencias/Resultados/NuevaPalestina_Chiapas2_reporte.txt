@@ -1,0 +1,42 @@
+======================================================================
+REPORTE MULTI-ARQUITECTURA — NuevaPalestina_Chiapas
+Generado: 2026-03-03 12:53:48
+======================================================================
+
+──────────────────────────────────────────────────
+ARQUITECTURA: Wildfire
+──────────────────────────────────────────────────
+Píxeles incendio (referencia) :     36,412
+Píxeles incendio (predicción) :     57,320
+Píxeles errados               :     29,818  (81.89%)
+
+Matriz de confusión:
+  VP=31,957  FP=25,363  FN=4,455  VN=112,177
+
+Métricas:
+  Precisión      : 55.75%
+  Recall         : 87.77%
+  F1-Score       : 68.19%
+  Exactitud      : 82.86%
+  Especificidad  : 81.56%
+
+──────────────────────────────────────────────────
+ARQUITECTURA: UNet
+──────────────────────────────────────────────────
+Píxeles incendio (referencia) :     36,412
+Píxeles incendio (predicción) :     69,758
+Píxeles errados               :     33,712  (92.58%)
+
+Matriz de confusión:
+  VP=36,229  FP=33,529  FN=183  VN=104,011
+
+Métricas:
+  Precisión      : 51.94%
+  Recall         : 99.50%
+  F1-Score       : 68.25%
+  Exactitud      : 80.62%
+  Especificidad  : 75.62%
+
+======================================================================
+FIN DEL REPORTE
+======================================================================

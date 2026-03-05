@@ -1,0 +1,88 @@
+============================================================
+RESUMEN DE CONVERSIÓN WILDFIRENET
+============================================================
+
+Modelo original: Wildfire3_N__128__AUG_1_best.pth
+Fecha conversión: 2026-01-27T23:28:54
+Total capas: 76
+Total parámetros: 225,486
+Tamaño total: 0.86 MB
+
+LISTA DE CAPAS:
+--------------------------------------------------------------------------------
+[000] layer1_0_weight                          32x4x3x3          0.00 MB
+[001] layer1_0_bias                            32                0.00 MB
+[002] layer1_1_weight                          32                0.00 MB
+[003] layer1_1_bias                            32                0.00 MB
+[004] layer1_1_running_mean                    32                0.00 MB
+[005] layer1_1_running_var                     32                0.00 MB
+[006] res1_net_0_weight                        32x32x3x3         0.04 MB
+[007] res1_net_0_bias                          32                0.00 MB
+[008] res1_net_1_weight                        32                0.00 MB
+[009] res1_net_1_bias                          32                0.00 MB
+[010] res1_net_1_running_mean                  32                0.00 MB
+[011] res1_net_1_running_var                   32                0.00 MB
+[012] res1_net_2_weight                        1                 0.00 MB
+[013] res1_net_3_weight                        32x32x3x3         0.04 MB
+[014] res1_net_3_bias                          32                0.00 MB
+[015] res1_net_4_weight                        32                0.00 MB
+[016] res1_net_4_bias                          32                0.00 MB
+[017] res1_net_4_running_mean                  32                0.00 MB
+[018] res1_net_4_running_var                   32                0.00 MB
+[019] convMaxToRes2_0_weight                   64x32x3x3         0.07 MB
+[020] convMaxToRes2_0_bias                     64                0.00 MB
+[021] convMaxToRes2_1_weight                   64                0.00 MB
+[022] convMaxToRes2_1_bias                     64                0.00 MB
+[023] convMaxToRes2_1_running_mean             64                0.00 MB
+[024] convMaxToRes2_1_running_var              64                0.00 MB
+[025] res2_net_0_weight                        64x64x3x3         0.14 MB
+[026] res2_net_0_bias                          64                0.00 MB
+[027] res2_net_1_weight                        64                0.00 MB
+[028] res2_net_1_bias                          64                0.00 MB
+[029] res2_net_1_running_mean                  64                0.00 MB
+[030] res2_net_1_running_var                   64                0.00 MB
+[031] res2_net_2_weight                        1                 0.00 MB
+[032] res2_net_3_weight                        64x64x3x3         0.14 MB
+[033] res2_net_3_bias                          64                0.00 MB
+[034] res2_net_4_weight                        64                0.00 MB
+[035] res2_net_4_bias                          64                0.00 MB
+[036] res2_net_4_running_mean                  64                0.00 MB
+[037] res2_net_4_running_var                   64                0.00 MB
+[038] res3_net_0_weight                        64x64x3x3         0.14 MB
+[039] res3_net_0_bias                          64                0.00 MB
+[040] res3_net_1_weight                        64                0.00 MB
+[041] res3_net_1_bias                          64                0.00 MB
+[042] res3_net_1_running_mean                  64                0.00 MB
+[043] res3_net_1_running_var                   64                0.00 MB
+[044] res3_net_2_weight                        1                 0.00 MB
+[045] res3_net_3_weight                        64x64x3x3         0.14 MB
+[046] res3_net_3_bias                          64                0.00 MB
+[047] res3_net_4_weight                        64                0.00 MB
+[048] res3_net_4_bias                          64                0.00 MB
+[049] res3_net_4_running_mean                  64                0.00 MB
+[050] res3_net_4_running_var                   64                0.00 MB
+[051] convRes3ToUnPool_0_weight                32x64x3x3         0.07 MB
+[052] convRes3ToUnPool_0_bias                  32                0.00 MB
+[053] convRes3ToUnPool_1_weight                32                0.00 MB
+[054] convRes3ToUnPool_1_bias                  32                0.00 MB
+[055] convRes3ToUnPool_1_running_mean          32                0.00 MB
+[056] convRes3ToUnPool_1_running_var           32                0.00 MB
+[057] res4_net_0_weight                        32x32x3x3         0.04 MB
+[058] res4_net_0_bias                          32                0.00 MB
+[059] res4_net_1_weight                        32                0.00 MB
+[060] res4_net_1_bias                          32                0.00 MB
+[061] res4_net_1_running_mean                  32                0.00 MB
+[062] res4_net_1_running_var                   32                0.00 MB
+[063] res4_net_2_weight                        1                 0.00 MB
+[064] res4_net_3_weight                        32x32x3x3         0.04 MB
+[065] res4_net_3_bias                          32                0.00 MB
+[066] res4_net_4_weight                        32                0.00 MB
+[067] res4_net_4_bias                          32                0.00 MB
+[068] res4_net_4_running_mean                  32                0.00 MB
+[069] res4_net_4_running_var                   32                0.00 MB
+[070] last_0_weight                            2x32x3x3          0.00 MB
+[071] last_0_bias                              2                 0.00 MB
+[072] last_1_weight                            2                 0.00 MB
+[073] last_1_bias                              2                 0.00 MB
+[074] last_1_running_mean                      2                 0.00 MB
+[075] last_1_running_var                       2                 0.00 MB
