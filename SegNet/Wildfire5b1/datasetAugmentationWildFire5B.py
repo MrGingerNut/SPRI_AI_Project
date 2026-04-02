@@ -225,7 +225,7 @@ class WildFireDataset(Dataset):
 
 if __name__ == "__main__":
    
-    data_root = "/home/felix/SPRI_AI_Project/SegNet/Wildfire5b1" 
+    data_root = "/home/liese2/SPRI_AI_project/SegNet/Wildfire5b1" 
     list_file_path = os.path.join(data_root, "ImageSets", "Segmentation", "train.txt")
     img_dir = os.path.join(data_root, "Images")
     mask_dir = os.path.join(data_root, "SegmentationClass")

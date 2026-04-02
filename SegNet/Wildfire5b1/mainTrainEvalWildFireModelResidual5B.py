@@ -40,7 +40,7 @@ args = parse.parse_args()
 data = "Wildfire5b1"
 
 
-data_root = "/home/felix/SPRI_AI_Project/SegNet/" + data
+data_root = "/home/liese2/SPRI_AI_project/SegNet/" + data
 
 dir_img = os.path.join(data_root, 'Images')
 dir_mask = os.path.join(data_root, 'SegmentationClass')

@@ -97,7 +97,7 @@ def procesar_dataset(
         )
         
         # Guardar nombre sin extensión
-        nombre_sin_ext = Path(archivo_true + ".tiff").stem
+        nombre_sin_ext = Path(archivo_true + "").stem
         nombres_entrenamiento.append(nombre_sin_ext)
     
     # Procesar archivos de validación
@@ -140,9 +140,9 @@ def procesar_dataset(
     print(f"  - Validación: {dir_txts_completo / 'valid.txt'} ({len(nombres_validacion)} archivos)")
     print("="*50)
 
-DIRECTORIO_ENTRADA = "/home/felix/SPRI_AI_Project/Dataset/Crops" 
-DIRECTORIO_SALIDA_BASE = "/home/felix/SPRI_AI_Project/SegNet" 
-DIRECTORIO_TXTS = "/home/felix/SPRI_AI_Project/SegNet" 
+DIRECTORIO_ENTRADA = "/home/liese2/SPRI_AI_project/Dataset/Crops" 
+DIRECTORIO_SALIDA_BASE = "/home/liese2/SPRI_AI_project/SegNet" 
+DIRECTORIO_TXTS = "/home/liese2/SPRI_AI_project/SegNet" 
 
 if __name__ == "__main__":
     # Configurar semilla para reproducibilidad (opcional)
