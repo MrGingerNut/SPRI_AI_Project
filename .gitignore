@@ -15,7 +15,7 @@ __pycache__/
 *.pt
 *.pth
 *.onnx
-*.data
+*.onnx.data
 models/
 data/
 Raw/
