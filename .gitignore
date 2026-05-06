@@ -29,6 +29,3 @@ Crop_folders/
 .idea/
 *.onnx.data
 *.onnx
-*.png
-*.tiff
-*.tif
