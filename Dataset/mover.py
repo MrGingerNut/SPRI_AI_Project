@@ -24,9 +24,9 @@ def procesar_dataset(
     dir_mask = Path(dir_entrada) / "Mask"
     
     # Definir rutas de salida
-    dir_imagenes = Path(dir_salida_base) / "Wildfire5b1" / "Images"
-    dir_segmentacion = Path(dir_salida_base) / "Wildfire5b1" / "SegmentationClass"
-    dir_txts_completo = Path(dir_txts) / "Wildfire5b1" / "ImageSets" / "Segmentation"
+    dir_imagenes = Path(dir_salida_base) / "Mobile-UNet_1" / "Images"
+    dir_segmentacion = Path(dir_salida_base) / "Mobile-UNet_1" / "SegmentationClass"
+    dir_txts_completo = Path(dir_txts) / "Mobile-UNet_1" / "ImageSets" / "Segmentation"
     
     # Crear directorios de salida si no existen
     dir_imagenes.mkdir(parents=True, exist_ok=True)
@@ -97,7 +97,7 @@ def procesar_dataset(
         )
         
         # Guardar nombre sin extensión
-        nombre_sin_ext = Path(archivo_true + "").stem
+        nombre_sin_ext = Path(archivo_true + ".tiff").stem
         nombres_entrenamiento.append(nombre_sin_ext)
     
     # Procesar archivos de validación
@@ -116,7 +116,7 @@ def procesar_dataset(
         )
         
         # Guardar nombre sin extensión
-        nombre_sin_ext = Path(archivo_true + "").stem
+        nombre_sin_ext = Path(archivo_true + ".tiff").stem
         nombres_validacion.append(nombre_sin_ext)
     
     # Escribir archivos txt
@@ -140,9 +140,9 @@ def procesar_dataset(
     print(f"  - Validación: {dir_txts_completo / 'valid.txt'} ({len(nombres_validacion)} archivos)")
     print("="*50)
 
-DIRECTORIO_ENTRADA = "/home/liese2/SPRI_AI_project/Dataset/Crops" 
-DIRECTORIO_SALIDA_BASE = "/home/liese2/SPRI_AI_project/SegNet" 
-DIRECTORIO_TXTS = "/home/liese2/SPRI_AI_project/SegNet" 
+DIRECTORIO_ENTRADA = "/home/liese2/SPRI_AI_project/Dataset/Crops1" 
+DIRECTORIO_SALIDA_BASE = "/home/liese2/SPRI_AI_project/Mobile-UNet/data" 
+DIRECTORIO_TXTS = "/home/liese2/SPRI_AI_project/Mobile-UNet" 
 
 if __name__ == "__main__":
     # Configurar semilla para reproducibilidad (opcional)
